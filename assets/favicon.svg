@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Uncle Mimi's Kitchen">
+  <rect width="64" height="64" rx="14" fill="#2c5f47"/>
+  <path d="M14,42 L24,20 L32,30 L40,20 L50,42" fill="none" stroke="#fdf1e3"
+        stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
