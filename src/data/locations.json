@@ -1,0 +1,54 @@
+{
+  "heading": "Where to Find Us on Island",
+  "note": "Uncle Mimi's baked goods are made in small batches and delivered fresh, so the selection at each store varies by day and season. To be sure of a specific item, call the store or reach out to us before you visit.",
+  "stores": [
+    {
+      "id": "chilmark-general-store",
+      "name": "Chilmark General Store",
+      "street": "7 State Road",
+      "city": "Chilmark",
+      "state": "MA",
+      "zip": "02535",
+      "phone": "+15086453739",
+      "phoneDisplay": "(508) 645-3739",
+      "lat": 41.3420459,
+      "lng": -70.7450497,
+      "image": {
+        "src": "assets/images/locations/chilmark-general-store.webp",
+        "alt": "The weathered cedar-shingle storefront of the Chilmark General Store, with an “OPEN” chalkboard sign on the front steps."
+      }
+    },
+    {
+      "id": "katama-general-store",
+      "name": "Katama General Store",
+      "street": "170 Katama Road",
+      "city": "Edgartown",
+      "state": "MA",
+      "zip": "02539",
+      "phone": "+15086275071",
+      "phoneDisplay": "(508) 627-5071",
+      "lat": 41.3818358,
+      "lng": -70.5177322,
+      "image": {
+        "src": "assets/images/locations/katama-general-store.jpg",
+        "alt": "The bright interior of the Katama General Store, with fresh produce displays and a coffee counter."
+      }
+    },
+    {
+      "id": "north-tisbury-farm-stand",
+      "name": "North Tisbury Farm Stand",
+      "street": "632 State Rd",
+      "city": "West Tisbury",
+      "state": "MA",
+      "zip": "02575",
+      "phone": "+15086964664",
+      "phoneDisplay": "(508) 696-4664",
+      "lat": 41.4073067,
+      "lng": -70.6734709,
+      "image": {
+        "src": "assets/images/locations/north-tisbury-farm-stand.jpg",
+        "alt": "The hanging “North Tisbury Farm & Market” sign with a rooster weathervane motif, above a bed of summer wildflowers under a blue sky."
+      }
+    }
+  ]
+}

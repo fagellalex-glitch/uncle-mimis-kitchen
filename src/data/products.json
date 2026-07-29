@@ -1,0 +1,77 @@
+[
+  {
+    "id": "blue-ribbon-challah",
+    "name": "Blue Ribbon Challah",
+    "description": "As sumptuous as it is striking, Uncle Mimi's challah is the perfect addition to your Shabbat table or festive dinner. Just as delicious on its own or as a base for french toast!",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
+    "image": {
+      "src": "assets/images/products/blue-ribbon-challah.jpg",
+      "alt": "Two loaves of glossy, golden braided challah resting in a woven wicker basket."
+    }
+  },
+  {
+    "id": "focaccia",
+    "name": "Focaccia",
+    "description": "The reigning blue ribbon winner in the Martha's Vineyard Agricultural Fair's professional yeast bread category.",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
+    "image": {
+      "src": "assets/images/products/rosemary-focaccia.png",
+      "alt": "A round, golden focaccia loaf crowned with fresh rosemary and flaky sea salt on a wooden board."
+    }
+  },
+  {
+    "id": "granola",
+    "name": "Granola",
+    "description": "Naturally vegan, slightly sweet, and absolutely addictive.",
+    "tag": "Vegan",
+    "image": {
+      "src": "assets/images/products/artisan-granola.jpg",
+      "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
+    }
+  },
+  {
+    "id": "cranberry-orange-scones",
+    "name": "Cranberry Orange Scones",
+    "description": "A zesty, hearty, everyday delight!",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
+    "image": {
+      "src": "assets/images/products/cranberry-orange-scones.png",
+      "alt": "A rattan basket of golden, cranberry-studded scones."
+    }
+  },
+  {
+    "id": "cinnamon-brown-sugar-coffee-cake",
+    "name": "Cinnamon Brown Sugar Coffee Cake",
+    "description": "Nostalgic and decadent. Always generously portioned.",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
+    "image": {
+      "src": "assets/images/products/cinnamon-brown-sugar-coffee-cake.png",
+      "alt": "Thick squares of marbled cinnamon brown sugar coffee cake stacked on a glass dish."
+    }
+  },
+  {
+    "id": "delicious-apple-cake",
+    "name": "Delicious Apple Cake",
+    "description": "It's all in the name. Made from a prized family recipe.",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
+    "image": {
+      "src": "assets/images/products/delicious-apple-cake.png",
+      "alt": "A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl."
+    }
+  }
+]

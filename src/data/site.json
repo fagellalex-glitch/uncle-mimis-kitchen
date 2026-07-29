@@ -1,0 +1,22 @@
+{
+  "name": "Uncle Mimi's Kitchen",
+  "shortName": "Uncle Mimi's",
+  "tagline": "Artisan baked goods made fresh on Martha's Vineyard.",
+  "metaDescription": "Uncle Mimi's Kitchen is a small-batch artisan bakery on Martha's Vineyard. Blue-ribbon focaccia, braided challah, granola, scones and cakes — made fresh and local. Find us at the Chilmark, Katama, and North Tisbury stores.",
+  "url": "https://unclemimiskitchen.com/",
+  "locale": "en_US",
+  "region": "Martha's Vineyard, Massachusetts",
+  "email": "orders@thesloans.net",
+  "phone": "+19175675134",
+  "phoneDisplay": "(917) 567-5134",
+  "instagram": "https://www.instagram.com/unclemimiskitchen/",
+  "logo": "assets/images/brand/uncle-mimi-logo.png",
+  "ogImage": "assets/og/uncle-mimis-og.jpg",
+  "nav": [
+    { "label": "Our Story", "href": "#story" },
+    { "label": "Products", "href": "#products" },
+    { "label": "Where to Find Us", "href": "#locations" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "cta": { "label": "Custom Orders", "href": "#contact" }
+}

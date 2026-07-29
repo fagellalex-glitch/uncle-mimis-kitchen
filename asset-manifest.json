@@ -1,0 +1,133 @@
+[
+  {
+    "section": "hero",
+    "source_original": "assets/images/hero/challah-basket-hero.jpg",
+    "original_dimensions": "2000x1500",
+    "output_widths": [
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "output_format": "jpeg",
+    "alt": "Challah basket hero"
+  },
+  {
+    "section": "story",
+    "source_original": "assets/images/story/uncle-mimis-original-sign.jpg",
+    "original_dimensions": "1062x230",
+    "output_widths": [
+      640,
+      1000,
+      1062
+    ],
+    "output_format": "jpeg",
+    "alt": "The original hand-lettered “Uncle Mimi's Restaurant” sign, painted on a weathered wooden plank resting against a stone wall in the grass."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/blue-ribbon-challah.jpg",
+    "original_dimensions": "599x488",
+    "output_widths": [
+      400,
+      599
+    ],
+    "output_format": "jpeg",
+    "alt": "Two loaves of glossy, golden braided challah resting in a woven wicker basket."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/rosemary-focaccia.png",
+    "original_dimensions": "1072x800",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A round, golden focaccia loaf crowned with fresh rosemary and flaky sea salt on a wooden board."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/artisan-granola.jpg",
+    "original_dimensions": "1067x800",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/cranberry-orange-scones.png",
+    "original_dimensions": "1074x800",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A rattan basket of golden, cranberry-studded scones."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/cinnamon-brown-sugar-coffee-cake.png",
+    "original_dimensions": "854x800",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "Thick squares of marbled cinnamon brown sugar coffee cake stacked on a glass dish."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/delicious-apple-cake.png",
+    "original_dimensions": "1067x800",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl."
+  },
+  {
+    "section": "locations",
+    "source_original": "assets/images/locations/chilmark-general-store.webp",
+    "original_dimensions": "683x683",
+    "output_widths": [
+      420,
+      683
+    ],
+    "output_format": "jpeg",
+    "alt": "The weathered cedar-shingle storefront of the Chilmark General Store, with an “OPEN” chalkboard sign on the front steps."
+  },
+  {
+    "section": "locations",
+    "source_original": "assets/images/locations/katama-general-store.jpg",
+    "original_dimensions": "800x530",
+    "output_widths": [
+      420,
+      700,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "The bright interior of the Katama General Store, with fresh produce displays and a coffee counter."
+  },
+  {
+    "section": "locations",
+    "source_original": "assets/images/locations/north-tisbury-farm-stand.jpg",
+    "original_dimensions": "795x800",
+    "output_widths": [
+      420,
+      700,
+      795
+    ],
+    "output_format": "jpeg",
+    "alt": "The hanging “North Tisbury Farm & Market” sign with a rooster weathervane motif, above a bed of summer wildflowers under a blue sky."
+  }
+]
