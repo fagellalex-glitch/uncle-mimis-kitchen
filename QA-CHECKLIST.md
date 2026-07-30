@@ -24,6 +24,28 @@ go‑live — the site is built to make them pass.
 > actual logo artwork composited onto a plain cream square. Verified the SVG's
 > fill is `#2c5f47` (brand green, not the old orange) and the apple‑touch‑icon
 > visually matches the header logo.
+>
+> **Real bug found and fixed (reported by the owner testing on their phone):**
+> the mobile menu "glitched" on open. Root cause: `.mobile-nav` (`position:
+> fixed; inset: 0`) was nested *inside* `<header>`, and the header has
+> `backdrop-filter` for its frosted‑glass effect — which, per the CSS spec,
+> makes any ancestor with `backdrop-filter`/`filter`/`transform` a new
+> containing block for `position: fixed` descendants. So `inset: 0` was
+> resolving against the ~68px‑tall header box instead of the real viewport,
+> squeezing the entire nav panel (all four links + the CTA button) into a
+> sliver at the top of the screen instead of covering it. Confirmed via
+> `getBoundingClientRect()` before (`h: 124`) and after (`h: 844`, matching
+> the emulated viewport) the fix, which simply moved the `.mobile-nav` markup
+> to be a sibling of `<header>` rather than a child. Re‑verified open/close
+> (button, scrim, Escape, link‑click), focus handling, and zero horizontal
+> overflow, all via real DevTools Protocol interaction — not just code review.
+>
+> **New feature added:** clicking a product photo now opens it larger in an
+> accessible lightbox (focus moves to the close button, Tab is trapped inside,
+> Escape/scrim/✕ all close it and restore focus to the photo that was
+> clicked, body scroll locks while open). Verified via the same real‑browser
+> method as above, on both desktop and a 390px mobile viewport (no horizontal
+> overflow in either).
 
 ## ✅ Verified programmatically (all passing)
 

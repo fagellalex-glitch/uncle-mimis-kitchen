@@ -212,6 +212,7 @@ ICON = {
     "pin": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     "info": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.75" r="1" fill="currentColor" stroke="none"/></svg>',
     "arrow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    "zoom": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg>',
     "instagram": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>',
     # Hand-drawn "UNCLE MIMI" mark — recreated to match the owner's sketch
     # (block "UNCLE" caps over a zigzag "M I M I" glyph in crayon maroon).
@@ -283,17 +284,17 @@ def render_header(site, logo_img):
         <span class="nav-toggle__bars" aria-hidden="true"></span>
       </button>
     </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="mobile-nav__scrim" data-close></div>
-      <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
-        <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobile">
-          <ul>{mobile_links}</ul>
-        </nav>
-        <a class="btn btn--primary" href="{attr(cta["href"])}">{esc(cta["label"])}</a>
-      </div>
+  </header>
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav__scrim" data-close></div>
+    <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile">
+        <ul>{mobile_links}</ul>
+      </nav>
+      <a class="btn btn--primary" href="{attr(cta["href"])}">{esc(cta["label"])}</a>
     </div>
-  </header>'''
+  </div>'''
 
 
 def render_hero(site, hero_img, hero_logo_img):
@@ -363,7 +364,14 @@ def render_products(products, imgs):
         cards.append(f'''<article class="product-card" data-reveal style="transition-delay:{delay}ms">
           <div class="product-card__media">
             {ribbon}
-            {picture_img(img, p["image"]["alt"], "(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw")}
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="{attr(img["src"])}" data-lightbox-w="{img["w"]}"
+                    data-lightbox-h="{img["h"]}" data-lightbox-alt="{attr(p["image"]["alt"])}"
+                    data-lightbox-caption="{attr(p["name"])}"
+                    aria-label="View a larger photo of {attr(p["name"])}">
+              {picture_img(img, p["image"]["alt"], "(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw")}
+              <span class="product-card__zoom-icon" aria-hidden="true">{ICON["zoom"]}</span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">{esc(p["name"])}</h3>
@@ -590,6 +598,14 @@ def render_page(site, story, products, locations, imgs, hero_img, sign_img,
 {render_locations(locations, imgs["locations"])}
   </main>
 {render_footer(site, logo_img, year)}
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__scrim" data-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+      <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+      <img class="lightbox__img" src="" alt="" loading="eager">
+      <p class="lightbox__caption"></p>
+    </div>
+  </div>
   <script src="assets/menu.js" defer></script>
 </body>
 </html>'''
@@ -820,7 +836,7 @@ def main():
     sign_img = make_image(story["sign"]["src"], [640, 1000, 1062], "story",
                           story["sign"]["alt"])
     product_imgs = {
-        p["id"]: make_image(p["image"]["src"], [400, 600, 800], "products",
+        p["id"]: make_image(p["image"]["src"], [400, 600, 800, 1100], "products",
                             p["image"]["alt"])
         for p in products
     }
