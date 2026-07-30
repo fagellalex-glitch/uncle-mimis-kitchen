@@ -22,7 +22,7 @@ copy strings are present verbatim in the built `dist/index.html`.
 | Delicious Apple Cake name + description | `#products` card | ✅ Preserved |
 | "Inquiries & Custom Orders" heading | `#contact` eyebrow | ✅ Preserved |
 | Email `unclemimiskitchen@gmail.com` | `#contact` + footer (`mailto:`) | ✅ Updated — the original site's address (`orders@thesloans.net`, decoded from Cloudflare obfuscation) was replaced at the owner's request. |
-| Phone (917) 567‑5134 | `#contact` + footer (`tel:`) | ✅ Preserved |
+| Phone (917) 567‑5134 | — | ❌ Removed at the owner's request; email and Instagram remain as the contact methods for Uncle Mimi's Kitchen itself. Store phone numbers are unaffected. |
 | "where to find us on island" heading | `#locations` eyebrow | ✅ Preserved |
 | "Contact & Location" section | Merged into `#contact` + `#locations` | ✅ Preserved |
 
@@ -44,7 +44,6 @@ at the source (documented in `UNRESOLVED.md`).
 ## Contact links — functional
 
 - ✅ `mailto:unclemimiskitchen@gmail.com`
-- ✅ `tel:+19175675134` (bakery)
 - ✅ `tel:+15086453739`, `tel:+15086275071`, `tel:+15086964664` (stores)
 - ✅ Google Maps "Get directions" + "Open in Google Maps" per store
 - ✅ Keyless Google Maps embed per store, lazy‑loaded, with titled iframes and a

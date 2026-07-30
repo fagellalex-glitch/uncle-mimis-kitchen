@@ -209,7 +209,6 @@ def maps_search_url(s):
 # --------------------------------------------------------------------------
 ICON = {
     "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
-    "phone": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg>',
     "pin": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     "info": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.75" r="1" fill="currentColor" stroke="none"/></svg>',
     "arrow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
@@ -416,18 +415,13 @@ def render_contact(site):
                 <span><span class="contact-method__label">Email us</span>
                   <span class="contact-method__value">{esc(site["email"])}</span></span>
               </a>
-              <a class="contact-method" href="tel:{attr(site["phone"])}">
-                <span class="contact-method__icon">{ICON["phone"]}</span>
-                <span><span class="contact-method__label">Call or text</span>
-                  <span class="contact-method__value">{esc(site["phoneDisplay"])}</span></span>
-              </a>
               {instagram_contact(site)}
             </div>
           </div>
           <div class="contact__card" data-reveal style="transition-delay:120ms">
             <h3>A note on ordering</h3>
             <p>Uncle Mimi's is a small-batch kitchen on Martha's Vineyard. Custom orders are
-               arranged directly by email or phone — there's no online checkout, so you'll always
+               arranged directly by email — there's no online checkout, so you'll always
                talk to a real person about quantities, timing, and pickup.</p>
             <p>You can also find our baked goods on shelves at three island stores — see
                <a href="#locations">Where to Find Us</a>.</p>
@@ -508,7 +502,6 @@ def render_footer(site, logo_img, year):
             <h2>Get in touch</h2>
             <ul>
               <li><a href="mailto:{attr(site["email"])}">{esc(site["email"])}</a></li>
-              <li><a href="tel:{attr(site["phone"])}">{esc(site["phoneDisplay"])}</a></li>
               {insta}
             </ul>
           </div>
@@ -535,7 +528,6 @@ def json_ld(site, products):
         "url": site["url"],
         "image": site["url"] + site["ogImage"],
         "email": site["email"],
-        "telephone": site["phone"],
         "areaServed": {"@type": "Place", "name": "Martha's Vineyard, Massachusetts"},
         "makesOffer": offers,
     }
