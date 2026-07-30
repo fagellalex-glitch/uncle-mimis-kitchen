@@ -46,6 +46,30 @@ go‑live — the site is built to make them pass.
 > clicked, body scroll locks while open). Verified via the same real‑browser
 > method as above, on both desktop and a 390px mobile viewport (no horizontal
 > overflow in either).
+>
+> **Bug found and fixed (reported by the owner testing on their phone):** the
+> "Custom Orders" button inside the mobile menu was rendering at the nav
+> links' oversized 26px serif font with only 4px of horizontal padding
+> (should be ~16px sans‑serif with 24px padding), making it look
+> disproportionate and contributing to a layout "glitch" during the open
+> animation. Root cause: `.mobile-nav a` (specificity `.class` + `a`) beat
+> the plain `.btn` class's own font‑size/padding rules, because the CTA is an
+> `<a class="btn btn--primary">` sibling of `<nav>`, not a link *inside* it —
+> so the broad selector unintentionally caught it too. Fixed by scoping the
+> rule to `.mobile-nav nav a`. Confirmed via computed styles before (26.15px
+> font, `13.6px 4px` padding, 72px tall) and after (16.46px font, `12px 24px`
+> padding, 53px tall) the fix. Also added `will-change: transform` /
+> `translate3d` to the panel as a defensive measure for smoother
+> GPU‑composited animation on real mobile hardware, which headless testing
+> can't fully validate.
+>
+> **Investigated, not reproducible:** the owner also reported the product
+> lightbox not opening in Chrome specifically (worked in Safari). Verified
+> the live production site's `main.css`/`menu.js` were correct and current,
+> and reproduced the click‑to‑open flow successfully in a cache‑disabled
+> fresh Chrome session against the live domain. Owner confirmed it started
+> working after a hard refresh — consistent with a stale browser cache
+> rather than a code defect.
 
 ## ✅ Verified programmatically (all passing)
 
