@@ -285,7 +285,7 @@ def render_header(site, logo_img):
       </button>
     </div>
   </header>
-  <div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav" id="mobile-nav" inert>
     <div class="mobile-nav__scrim" data-close></div>
     <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
       <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>

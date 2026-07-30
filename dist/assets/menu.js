@@ -21,6 +21,7 @@
 
   function openMenu() {
     lastFocused = document.activeElement;
+    drawer.removeAttribute("inert");
     drawer.setAttribute("data-open", "true");
     toggle.setAttribute("aria-expanded", "true");
     document.body.classList.add("no-scroll");
@@ -31,6 +32,7 @@
 
   function closeMenu(restoreFocus) {
     drawer.removeAttribute("data-open");
+    drawer.setAttribute("inert", "");
     toggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("no-scroll");
     document.removeEventListener("keydown", onKeydown);

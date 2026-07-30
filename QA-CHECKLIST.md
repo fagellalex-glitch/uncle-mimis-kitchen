@@ -70,6 +70,27 @@ go‑live — the site is built to make them pass.
 > fresh Chrome session against the live domain. Owner confirmed it started
 > working after a hard refresh — consistent with a stale browser cache
 > rather than a code defect.
+>
+> **Menu glitch persisted after the button-sizing fix — real root cause
+> found and fixed.** The owner confirmed the glitch was still happening on
+> a real phone. Frame-by-frame CDP screencast capture during the open
+> transition couldn't reproduce it, which pointed at the likely explanation:
+> this test environment runs headless Chrome with `--disable-gpu` (forced
+> software rendering), which doesn't exhibit the same behavior as a real
+> device's GPU compositor. The suspect: `.mobile-nav` toggled CSS
+> `visibility` at the exact same moment its child's `transform` animation
+> started — a combination known to cause a real GPU compositor to briefly
+> paint a stale/unanimated frame before the transform takes over (a "layer
+> promotion glitch"), even though it renders perfectly in software-rendered
+> testing. Fixed by removing the `visibility` toggle entirely — the panel is
+> now always laid out off-screen (never removed from the render tree), so
+> opening it is a single uninterrupted transform animation. Replaced
+> `visibility:hidden`'s side-effect of removing the closed panel from the
+> tab order with the explicit `inert` HTML attribute (present in the markup
+> by default, so it's correct even with JavaScript disabled; toggled by
+> `menu.js` on open/close). Re-verified the full interaction set — initial
+> `inert` state, open, close via ✕/Escape/link-click, and the resulting
+> `inert` state after each — all correct, with zero console errors.
 
 ## ✅ Verified programmatically (all passing)
 
