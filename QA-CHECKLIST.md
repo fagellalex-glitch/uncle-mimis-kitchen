@@ -91,6 +91,27 @@ go‑live — the site is built to make them pass.
 > `menu.js` on open/close). Re-verified the full interaction set — initial
 > `inert` state, open, close via ✕/Escape/link-click, and the resulting
 > `inert` state after each — all correct, with zero console errors.
+>
+> **Glitch persisted a second time — real root cause finally isolated.** The
+> owner narrowed it down precisely: smooth at the very top of the page,
+> glitches the instant you've scrolled at all before opening the menu. That
+> detail pointed at a different, well‑documented mobile Safari bug: plain
+> `overflow: hidden` on `<body>` does not reliably stop the page from
+> continuing to move (via momentum/inertia scrolling) behind a fixed overlay
+> once you're not at the very top — that residual motion fighting the
+> panel's own entrance animation is what read as a glitch, and explains why
+> it never happened at scrollY 0 (nothing to leak). Fixed by replacing the
+> scroll lock with the standard, battle‑tested pattern: capture the exact
+> scroll offset, pin `<body>` at `position: fixed; top: -{offset}px`, and
+> restore the scroll position on close — removing the scrollable surface
+> entirely while locked rather than merely hiding overflow. Extracted into a
+> shared `lockScroll`/`unlockScroll` pair used by both the mobile menu and
+> the product lightbox, since both had the same underlying exposure.
+> Verified via CDP: scrolled to `scrollY: 886`, opened the menu, confirmed
+> `body { position: fixed; top: -886px }` and `window.scrollY === 0` while
+> open, then confirmed `scrollY` was restored to exactly `886` on close.
+> Re‑verified the lightbox's full interaction set still passes using the
+> shared lock.
 
 ## ✅ Verified programmatically (all passing)
 

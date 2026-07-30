@@ -271,7 +271,11 @@ p { text-wrap: pretty; }
 }
 .mobile-nav nav a:hover { color: var(--accent); }
 .mobile-nav .btn { margin-top: var(--space-sm); width: 100%; }
-body.no-scroll { overflow: hidden; }
+/* Freezes the page at its current scroll position while an overlay is open.
+   `top` is set inline by JS to the negative scroll offset — plain
+   `overflow: hidden` alone doesn't reliably stop iOS Safari's momentum
+   scroll from continuing to move the page behind a fixed overlay. */
+body.no-scroll { position: fixed; overflow: hidden; width: 100%; }
 
 /* ==========================================================================
    Hero
