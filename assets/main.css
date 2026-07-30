@@ -238,7 +238,7 @@ p { text-wrap: pretty; }
 /* Mobile drawer */
 .mobile-nav {
   position: fixed; inset: 0; z-index: 60;
-  visibility: hidden; pointer-events: none;
+  pointer-events: none;
   overflow: hidden; /* contain the off-canvas panel so it can't create horizontal scroll */
 }
 .mobile-nav__scrim {
@@ -255,7 +255,7 @@ p { text-wrap: pretty; }
   will-change: transform;
   overflow-y: auto;
 }
-.mobile-nav[data-open="true"] { visibility: visible; pointer-events: auto; }
+.mobile-nav[data-open="true"] { pointer-events: auto; }
 .mobile-nav[data-open="true"] .mobile-nav__scrim { opacity: 1; }
 .mobile-nav[data-open="true"] .mobile-nav__panel { transform: translate3d(0, 0, 0); }
 .mobile-nav__close {
