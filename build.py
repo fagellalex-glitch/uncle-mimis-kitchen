@@ -22,7 +22,7 @@ import struct
 import shutil
 import subprocess
 from datetime import date, timezone, datetime
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlparse
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
@@ -796,6 +796,12 @@ def write_seo_files(site, year):
                 '</urlset>\n')
     with open(os.path.join(DIST, "site.webmanifest"), "w", encoding="utf-8") as f:
         json.dump(WEBMANIFEST, f, ensure_ascii=False, indent=2)
+    # GitHub Pages custom-domain file — derived from site.json so it can
+    # never silently disappear on a rebuild (dist/ is wiped every build).
+    hostname = urlparse(site["url"]).hostname
+    if hostname:
+        with open(os.path.join(DIST, "CNAME"), "w", encoding="utf-8") as f:
+            f.write(hostname + "\n")
 
 
 def write_asset_manifest():

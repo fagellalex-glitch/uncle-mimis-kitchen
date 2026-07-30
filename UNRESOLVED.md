@@ -29,10 +29,10 @@ always available, I added a neutral line:
 > item, call the store or reach out to us before you visit."
 Confirm this is accurate, or reword/remove it.
 
-### 4. Email address — confirm
-`orders@thesloans.net` was **decoded from the Cloudflare‑obfuscated address** in
-the original page (it isn't shown as plain text there). Please confirm it's
-correct before launch.
+### 4. Email address — resolved ✅
+The original site's address (`orders@thesloans.net`, decoded from Cloudflare
+obfuscation) has been replaced with `unclemimiskitchen@gmail.com` at the
+owner's request.
 
 ### 5. Instagram — added, please verify the account
 No social links existed on the original Weebly site. You provided
