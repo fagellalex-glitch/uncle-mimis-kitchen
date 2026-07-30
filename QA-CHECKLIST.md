@@ -7,6 +7,21 @@ were **not** available in the environment, so the Lighthouse score and the
 interactive/cross‑browser items marked **⧗** should be spot‑checked once before
 go‑live — the site is built to make them pass.
 
+> **The hamburger menu has been removed entirely (owner's decision).** After
+> several rounds of real, distinct bugs in the off‑canvas drawer (documented
+> below for the record — each was a genuine fix, verified, and confirmed by
+> the owner as *not* the same issue recurring), a glitch on real phones
+> persisted. Rather than keep chasing device‑specific rendering behavior
+> this environment's headless testing structurally cannot reproduce
+> (`--disable-gpu` forces software rendering, which doesn't exhibit the same
+> compositor behavior as a real phone), the toggle/drawer/scrim/panel were
+> removed outright. Navigation is now a plain, always‑visible link list in
+> the header — horizontally scrollable on narrow screens — with no JS
+> required to use it, no overlay, no animation, and therefore nothing left
+> that can glitch. The notes below are kept as a record of what was
+> genuinely fixed along the way, not as claims about the current
+> implementation, which no longer has an off‑canvas panel at all.
+>
 > **Bug found and fixed during the browser pass:** at ≤375px the off‑canvas
 > mobile‑nav panel (`transform: translateX(100%)`) created horizontal overflow
 > (`scrollWidth` 680 vs viewport 320) that `body { overflow-x: hidden }` could not
@@ -168,16 +183,17 @@ go‑live — the site is built to make them pass.
 Remaining widths to eyeball (all built with the same fluid system):
 **430 · 768 · 1024 · 1280 · 1920 px.**
 
-- [ ] Mobile menu: opens/closes via button, scrim, ✕, Escape, and auto‑closes on
-      link tap; body scroll locks while open; focus is trapped and returns to the
-      toggle on close. *(Implemented in `menu.js`.)*
+- [ ] Mobile nav: all four links plus "Custom Orders" are visible without
+      opening anything; the link row scrolls horizontally if it doesn't fully
+      fit; tapping a link scrolls to the right section with the header
+      correctly clear of the heading. *(No toggle/overlay exists anymore —
+      see the "hamburger menu removed" note below.)*
 - [ ] Keyboard‑only: skip link appears on first Tab; visible focus ring on every
       interactive element; full nav reachable.
 - [ ] `prefers-reduced-motion: reduce` disables smooth scroll, hover zoom, and
       transitions. *(Implemented in CSS.)*
-- [ ] JavaScript disabled: all content, links, and contact info still work
-      (progressive enhancement — only the mobile drawer needs JS, and desktop nav
-      is always visible ≥860px).
+- [ ] JavaScript disabled: all content, links, and contact info still work.
+      Navigation itself needs no JS at all now; only the product lightbox does.
 - [ ] Maps: each embed shows the correct store; if an embed is blocked, the
       fallback "Open in Google Maps" link is present.
 - [ ] Console shows **no errors** and the Network panel shows **no failed

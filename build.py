@@ -265,9 +265,6 @@ def render_header(site, logo_img):
     nav_links = "".join(
         f'<li><a href="{attr(n["href"])}" data-spy>{esc(n["label"])}</a></li>'
         for n in site["nav"])
-    mobile_links = "".join(
-        f'<li><a href="{attr(n["href"])}">{esc(n["label"])}</a></li>'
-        for n in site["nav"])
     brand = brand_markup(logo_img)
     cta = site["cta"]
     return f'''<header class="site-header">
@@ -279,22 +276,8 @@ def render_header(site, logo_img):
       <div class="header-actions">
         <a class="btn btn--primary" href="{attr(cta["href"])}">{esc(cta["label"])}</a>
       </div>
-      <button class="nav-toggle" type="button" aria-expanded="false"
-              aria-controls="mobile-nav" aria-label="Open menu">
-        <span class="nav-toggle__bars" aria-hidden="true"></span>
-      </button>
     </div>
-  </header>
-  <div class="mobile-nav" id="mobile-nav" inert>
-    <div class="mobile-nav__scrim" data-close></div>
-    <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
-      <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
-      <nav aria-label="Mobile">
-        <ul>{mobile_links}</ul>
-      </nav>
-      <a class="btn btn--primary" href="{attr(cta["href"])}">{esc(cta["label"])}</a>
-    </div>
-  </div>'''
+  </header>'''
 
 
 def render_hero(site, hero_img, hero_logo_img):

@@ -78,7 +78,7 @@
   --wrap-wide: 1320px;
   --radius: 10px;
   --radius-lg: 16px;
-  --header-h: 68px;
+  --header-h: 112px; /* header wraps to two rows below 860px — see that breakpoint */
 
   --shadow-sm: 0 1px 2px rgba(42, 33, 27, 0.06), 0 2px 6px rgba(42, 33, 27, 0.05);
   --shadow-md: 0 6px 22px rgba(42, 33, 27, 0.10);
@@ -183,7 +183,8 @@ p { text-wrap: pretty; }
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: var(--space-md); min-height: var(--header-h);
+  flex-wrap: wrap; gap: 0.6rem var(--space-md);
+  min-height: var(--header-h); padding-block: 0.6rem;
 }
 .brand {
   font-family: var(--font-display); font-weight: 500;
@@ -205,11 +206,22 @@ p { text-wrap: pretty; }
   color: var(--ink-faint); align-self: flex-end; padding-bottom: 0.35rem;
 }
 
-.primary-nav { display: none; }
-.primary-nav ul { list-style: none; display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); padding: 0; }
+/* Always visible at every width — no toggle, no overlay, nothing to
+   animate on open, so there's no scroll/GPU-compositor interaction left
+   that could glitch. On narrow screens the links become their own
+   horizontally scrollable row instead of wrapping or hiding. */
+.primary-nav {
+  order: 3; flex-basis: 100%;
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.primary-nav::-webkit-scrollbar { display: none; }
+.primary-nav ul {
+  list-style: none; display: flex; align-items: center;
+  gap: clamp(1.1rem, 4vw, 2rem); padding: 0; flex-wrap: nowrap; width: max-content;
+}
 .primary-nav a {
   color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: var(--step-0);
-  padding: 0.4rem 0; position: relative;
+  padding: 0.4rem 0; position: relative; white-space: nowrap;
 }
 .primary-nav a::after {
   content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px;
@@ -217,60 +229,8 @@ p { text-wrap: pretty; }
 }
 .primary-nav a:hover, .primary-nav a[aria-current="true"] { color: var(--ink); }
 .primary-nav a:hover::after, .primary-nav a[aria-current="true"]::after { right: 0; }
-.header-actions { display: none; align-items: center; gap: var(--space-sm); }
+.header-actions { display: inline-flex; align-items: center; gap: var(--space-sm); }
 
-/* Mobile toggle */
-.nav-toggle {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 48px; height: 48px; background: transparent; border: 0; cursor: pointer;
-  color: var(--ink); border-radius: 8px;
-}
-.nav-toggle__bars, .nav-toggle__bars::before, .nav-toggle__bars::after {
-  content: ""; display: block; width: 24px; height: 2px; background: currentColor; border-radius: 2px;
-  transition: transform 0.28s var(--ease), opacity 0.28s var(--ease);
-}
-.nav-toggle__bars::before { transform: translateY(-7px); }
-.nav-toggle__bars::after  { transform: translateY(5px); }
-.nav-toggle[aria-expanded="true"] .nav-toggle__bars { background: transparent; }
-.nav-toggle[aria-expanded="true"] .nav-toggle__bars::before { transform: translateY(0) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] .nav-toggle__bars::after  { transform: translateY(-2px) rotate(-45deg); }
-
-/* Mobile drawer */
-.mobile-nav {
-  position: fixed; inset: 0; z-index: 60;
-  pointer-events: none;
-  overflow: hidden; /* contain the off-canvas panel so it can't create horizontal scroll */
-}
-.mobile-nav__scrim {
-  position: absolute; inset: 0; background: rgba(30, 23, 18, 0.5);
-  opacity: 0; transition: opacity 0.3s var(--ease);
-}
-.mobile-nav__panel {
-  position: absolute; top: 0; right: 0; height: 100%;
-  width: min(86vw, 360px); background: var(--cream);
-  box-shadow: var(--shadow-md);
-  padding: calc(var(--header-h) + 1rem) var(--space-lg) var(--space-lg);
-  display: flex; flex-direction: column; gap: var(--space-sm);
-  transform: translate3d(100%, 0, 0); transition: transform 0.32s var(--ease);
-  will-change: transform;
-  overflow-y: auto;
-}
-.mobile-nav[data-open="true"] { pointer-events: auto; }
-.mobile-nav[data-open="true"] .mobile-nav__scrim { opacity: 1; }
-.mobile-nav[data-open="true"] .mobile-nav__panel { transform: translate3d(0, 0, 0); }
-.mobile-nav__close {
-  position: absolute; top: 1rem; right: 1rem; width: 44px; height: 44px;
-  border: 0; background: transparent; cursor: pointer; color: var(--ink); font-size: 1.6rem; line-height: 1;
-  border-radius: 8px;
-}
-.mobile-nav ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
-.mobile-nav nav a {
-  display: block; padding: 0.85rem 0.25rem; font-family: var(--font-display);
-  font-size: var(--step-2); color: var(--ink); text-decoration: none;
-  border-bottom: 1px solid var(--line);
-}
-.mobile-nav nav a:hover { color: var(--accent); }
-.mobile-nav .btn { margin-top: var(--space-sm); width: 100%; }
 /* Freezes the page at its current scroll position while an overlay is open.
    `top` is set inline by JS to the negative scroll offset — plain
    `overflow: hidden` alone doesn't reliably stop iOS Safari's momentum
@@ -546,9 +506,9 @@ body.no-scroll { position: fixed; overflow: hidden; width: 100%; }
 }
 @media (min-width: 860px) {
   :root { --header-h: 76px; }
-  .primary-nav { display: block; }
-  .header-actions { display: inline-flex; }
-  .nav-toggle { display: none; }
+  .site-header__inner { flex-wrap: nowrap; padding-block: 0; }
+  .primary-nav { order: 0; flex-basis: auto; overflow-x: visible; }
+  .primary-nav ul { width: auto; }
   .story__grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-xl); }
   .product-grid { grid-template-columns: repeat(3, 1fr); }
   .hero__content { max-width: 40rem; }
@@ -578,6 +538,6 @@ body.no-scroll { position: fixed; overflow: hidden; width: 100%; }
 
 /* ----- Print ------------------------------------------------------------- */
 @media print {
-  .site-header, .mobile-nav, .lightbox, .hero__actions, .map-embed { display: none !important; }
+  .site-header, .lightbox, .hero__actions, .map-embed { display: none !important; }
   body { color: #000; background: #fff; }
 }
