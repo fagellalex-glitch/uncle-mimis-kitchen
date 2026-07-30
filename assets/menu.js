@@ -105,4 +105,51 @@
     }, { rootMargin: "0px 0px -10% 0px", threshold: 0.1 });
     revealEls.forEach(function (el) { reveal.observe(el); });
   }
+
+  // Product photo lightbox: click a baked-good photo to see it larger.
+  var lightbox = document.getElementById("lightbox");
+  var zoomButtons = Array.prototype.slice.call(document.querySelectorAll(".product-card__zoom"));
+  if (lightbox && zoomButtons.length) {
+    var lbDialog = lightbox.querySelector(".lightbox__dialog");
+    var lbImg = lightbox.querySelector(".lightbox__img");
+    var lbCaption = lightbox.querySelector(".lightbox__caption");
+    var lbClose = lightbox.querySelector(".lightbox__close");
+    var lbScrim = lightbox.querySelector(".lightbox__scrim");
+    var lbLastFocused = null;
+
+    function openLightbox(trigger) {
+      lbLastFocused = trigger;
+      lbImg.src = trigger.getAttribute("data-lightbox-src") || "";
+      lbImg.alt = trigger.getAttribute("data-lightbox-alt") || "";
+      lbImg.width = trigger.getAttribute("data-lightbox-w") || "";
+      lbImg.height = trigger.getAttribute("data-lightbox-h") || "";
+      lbCaption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
+      lightbox.setAttribute("data-open", "true");
+      document.body.classList.add("no-scroll");
+      lbClose.focus();
+      document.addEventListener("keydown", onLbKeydown);
+    }
+
+    function closeLightbox() {
+      lightbox.removeAttribute("data-open");
+      document.body.classList.remove("no-scroll");
+      document.removeEventListener("keydown", onLbKeydown);
+      if (lbLastFocused) lbLastFocused.focus();
+    }
+
+    function onLbKeydown(e) {
+      if (e.key === "Escape") { closeLightbox(); return; }
+      if (e.key === "Tab") {
+        // The close button is the only focusable control in the dialog.
+        e.preventDefault();
+        lbClose.focus();
+      }
+    }
+
+    zoomButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () { openLightbox(btn); });
+    });
+    lbClose.addEventListener("click", closeLightbox);
+    lbScrim.addEventListener("click", closeLightbox);
+  }
 })();

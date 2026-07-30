@@ -123,17 +123,17 @@
         <span class="nav-toggle__bars" aria-hidden="true"></span>
       </button>
     </div>
-    <div class="mobile-nav" id="mobile-nav">
-      <div class="mobile-nav__scrim" data-close></div>
-      <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
-        <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobile">
-          <ul><li><a href="#story">Our Story</a></li><li><a href="#products">Products</a></li><li><a href="#locations">Where to Find Us</a></li><li><a href="#contact">Contact</a></li></ul>
-        </nav>
-        <a class="btn btn--primary" href="#contact">Custom Orders</a>
-      </div>
-    </div>
   </header>
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav__scrim" data-close></div>
+    <div class="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile">
+        <ul><li><a href="#story">Our Story</a></li><li><a href="#products">Products</a></li><li><a href="#locations">Where to Find Us</a></li><li><a href="#contact">Contact</a></li></ul>
+      </nav>
+      <a class="btn btn--primary" href="#contact">Custom Orders</a>
+    </div>
+  </div>
   <main id="main">
 <section class="hero" id="top">
       <div class="hero__media">
@@ -177,7 +177,14 @@
         <div class="product-grid"><article class="product-card" data-reveal style="transition-delay:0ms">
           <div class="product-card__media">
             <span class="ribbon-badge" tabindex="0" role="img" aria-label="Blue Ribbon Winner. 1st place, MV Agricultural Fair."><svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 36h6v25l-3-4.2-3 4.2z" fill="#164a86"/><path d="M24 36h6v25l-3-4.2-3 4.2z" fill="#1a5aa0"/><circle cx="24" cy="24" r="17.5" fill="#1f5fa8"/><circle cx="24" cy="24" r="17.5" fill="none" stroke="#15487f" stroke-width="2" stroke-dasharray="2.6 3"/><circle cx="24" cy="24" r="13" fill="#2f76c6"/><circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9"/><path d="M24 15.2l2.34 4.74 5.23.76-3.78 3.69.89 5.21L24 27.4l-4.68 2.46.89-5.21-3.78-3.69 5.23-.76z" fill="#f4c24b"/></svg><span class="ribbon-badge__tip" role="tooltip"><strong>Blue Ribbon Winner</strong>1st place, MV Agricultural Fair</span></span>
-            <img src="assets/images/products/blue-ribbon-challah-599.jpg" srcset="assets/images/products/blue-ribbon-challah-400.jpg 400w, assets/images/products/blue-ribbon-challah-599.jpg 599w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="599" height="488" alt="Two loaves of glossy, golden braided challah resting in a woven wicker basket." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/blue-ribbon-challah-599.jpg" data-lightbox-w="599"
+                    data-lightbox-h="488" data-lightbox-alt="Two loaves of glossy, golden braided challah resting in a woven wicker basket."
+                    data-lightbox-caption="Blue Ribbon Challah"
+                    aria-label="View a larger photo of Blue Ribbon Challah">
+              <img src="assets/images/products/blue-ribbon-challah-599.jpg" srcset="assets/images/products/blue-ribbon-challah-400.jpg 400w, assets/images/products/blue-ribbon-challah-599.jpg 599w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="599" height="488" alt="Two loaves of glossy, golden braided challah resting in a woven wicker basket." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Blue Ribbon Challah</h3>
@@ -187,7 +194,14 @@
         </article><article class="product-card" data-reveal style="transition-delay:90ms">
           <div class="product-card__media">
             <span class="ribbon-badge" tabindex="0" role="img" aria-label="Blue Ribbon Winner. 1st place, MV Agricultural Fair."><svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 36h6v25l-3-4.2-3 4.2z" fill="#164a86"/><path d="M24 36h6v25l-3-4.2-3 4.2z" fill="#1a5aa0"/><circle cx="24" cy="24" r="17.5" fill="#1f5fa8"/><circle cx="24" cy="24" r="17.5" fill="none" stroke="#15487f" stroke-width="2" stroke-dasharray="2.6 3"/><circle cx="24" cy="24" r="13" fill="#2f76c6"/><circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9"/><path d="M24 15.2l2.34 4.74 5.23.76-3.78 3.69.89 5.21L24 27.4l-4.68 2.46.89-5.21-3.78-3.69 5.23-.76z" fill="#f4c24b"/></svg><span class="ribbon-badge__tip" role="tooltip"><strong>Blue Ribbon Winner</strong>1st place, MV Agricultural Fair</span></span>
-            <img src="assets/images/products/rosemary-focaccia-800.jpg" srcset="assets/images/products/rosemary-focaccia-400.jpg 400w, assets/images/products/rosemary-focaccia-600.jpg 600w, assets/images/products/rosemary-focaccia-800.jpg 800w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="800" height="597" alt="A round, golden focaccia loaf crowned with fresh rosemary and flaky sea salt on a wooden board." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/rosemary-focaccia-1072.jpg" data-lightbox-w="1072"
+                    data-lightbox-h="800" data-lightbox-alt="A round, golden focaccia loaf crowned with fresh rosemary and flaky sea salt on a wooden board."
+                    data-lightbox-caption="Focaccia"
+                    aria-label="View a larger photo of Focaccia">
+              <img src="assets/images/products/rosemary-focaccia-1072.jpg" srcset="assets/images/products/rosemary-focaccia-400.jpg 400w, assets/images/products/rosemary-focaccia-600.jpg 600w, assets/images/products/rosemary-focaccia-800.jpg 800w, assets/images/products/rosemary-focaccia-1072.jpg 1072w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="1072" height="800" alt="A round, golden focaccia loaf crowned with fresh rosemary and flaky sea salt on a wooden board." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Focaccia</h3>
@@ -197,7 +211,14 @@
         </article><article class="product-card" data-reveal style="transition-delay:180ms">
           <div class="product-card__media">
             
-            <img src="assets/images/products/artisan-granola-800.jpg" srcset="assets/images/products/artisan-granola-400.jpg 400w, assets/images/products/artisan-granola-600.jpg 600w, assets/images/products/artisan-granola-800.jpg 800w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="800" height="600" alt="A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/artisan-granola-1067.jpg" data-lightbox-w="1067"
+                    data-lightbox-h="800" data-lightbox-alt="A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
+                    data-lightbox-caption="Granola"
+                    aria-label="View a larger photo of Granola">
+              <img src="assets/images/products/artisan-granola-1067.jpg" srcset="assets/images/products/artisan-granola-400.jpg 400w, assets/images/products/artisan-granola-600.jpg 600w, assets/images/products/artisan-granola-800.jpg 800w, assets/images/products/artisan-granola-1067.jpg 1067w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="1067" height="800" alt="A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Granola</h3>
@@ -207,7 +228,14 @@
         </article><article class="product-card" data-reveal style="transition-delay:0ms">
           <div class="product-card__media">
             <span class="ribbon-badge" tabindex="0" role="img" aria-label="Blue Ribbon Winner. 1st place, MV Agricultural Fair."><svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 36h6v25l-3-4.2-3 4.2z" fill="#164a86"/><path d="M24 36h6v25l-3-4.2-3 4.2z" fill="#1a5aa0"/><circle cx="24" cy="24" r="17.5" fill="#1f5fa8"/><circle cx="24" cy="24" r="17.5" fill="none" stroke="#15487f" stroke-width="2" stroke-dasharray="2.6 3"/><circle cx="24" cy="24" r="13" fill="#2f76c6"/><circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9"/><path d="M24 15.2l2.34 4.74 5.23.76-3.78 3.69.89 5.21L24 27.4l-4.68 2.46.89-5.21-3.78-3.69 5.23-.76z" fill="#f4c24b"/></svg><span class="ribbon-badge__tip" role="tooltip"><strong>Blue Ribbon Winner</strong>1st place, MV Agricultural Fair</span></span>
-            <img src="assets/images/products/cranberry-orange-scones-800.jpg" srcset="assets/images/products/cranberry-orange-scones-400.jpg 400w, assets/images/products/cranberry-orange-scones-600.jpg 600w, assets/images/products/cranberry-orange-scones-800.jpg 800w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="800" height="596" alt="A rattan basket of golden, cranberry-studded scones." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/cranberry-orange-scones-1074.jpg" data-lightbox-w="1074"
+                    data-lightbox-h="800" data-lightbox-alt="A rattan basket of golden, cranberry-studded scones."
+                    data-lightbox-caption="Cranberry Orange Scones"
+                    aria-label="View a larger photo of Cranberry Orange Scones">
+              <img src="assets/images/products/cranberry-orange-scones-1074.jpg" srcset="assets/images/products/cranberry-orange-scones-400.jpg 400w, assets/images/products/cranberry-orange-scones-600.jpg 600w, assets/images/products/cranberry-orange-scones-800.jpg 800w, assets/images/products/cranberry-orange-scones-1074.jpg 1074w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="1074" height="800" alt="A rattan basket of golden, cranberry-studded scones." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Cranberry Orange Scones</h3>
@@ -217,7 +245,14 @@
         </article><article class="product-card" data-reveal style="transition-delay:90ms">
           <div class="product-card__media">
             <span class="ribbon-badge" tabindex="0" role="img" aria-label="Blue Ribbon Winner. 1st place, MV Agricultural Fair."><svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 36h6v25l-3-4.2-3 4.2z" fill="#164a86"/><path d="M24 36h6v25l-3-4.2-3 4.2z" fill="#1a5aa0"/><circle cx="24" cy="24" r="17.5" fill="#1f5fa8"/><circle cx="24" cy="24" r="17.5" fill="none" stroke="#15487f" stroke-width="2" stroke-dasharray="2.6 3"/><circle cx="24" cy="24" r="13" fill="#2f76c6"/><circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9"/><path d="M24 15.2l2.34 4.74 5.23.76-3.78 3.69.89 5.21L24 27.4l-4.68 2.46.89-5.21-3.78-3.69 5.23-.76z" fill="#f4c24b"/></svg><span class="ribbon-badge__tip" role="tooltip"><strong>Blue Ribbon Winner</strong>1st place, MV Agricultural Fair</span></span>
-            <img src="assets/images/products/cinnamon-brown-sugar-coffee-cake-800.jpg" srcset="assets/images/products/cinnamon-brown-sugar-coffee-cake-400.jpg 400w, assets/images/products/cinnamon-brown-sugar-coffee-cake-600.jpg 600w, assets/images/products/cinnamon-brown-sugar-coffee-cake-800.jpg 800w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="800" height="749" alt="Thick squares of marbled cinnamon brown sugar coffee cake stacked on a glass dish." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/cinnamon-brown-sugar-coffee-cake-854.jpg" data-lightbox-w="854"
+                    data-lightbox-h="800" data-lightbox-alt="Thick squares of marbled cinnamon brown sugar coffee cake stacked on a glass dish."
+                    data-lightbox-caption="Cinnamon Brown Sugar Coffee Cake"
+                    aria-label="View a larger photo of Cinnamon Brown Sugar Coffee Cake">
+              <img src="assets/images/products/cinnamon-brown-sugar-coffee-cake-854.jpg" srcset="assets/images/products/cinnamon-brown-sugar-coffee-cake-400.jpg 400w, assets/images/products/cinnamon-brown-sugar-coffee-cake-600.jpg 600w, assets/images/products/cinnamon-brown-sugar-coffee-cake-800.jpg 800w, assets/images/products/cinnamon-brown-sugar-coffee-cake-854.jpg 854w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="854" height="800" alt="Thick squares of marbled cinnamon brown sugar coffee cake stacked on a glass dish." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Cinnamon Brown Sugar Coffee Cake</h3>
@@ -227,7 +262,14 @@
         </article><article class="product-card" data-reveal style="transition-delay:180ms">
           <div class="product-card__media">
             <span class="ribbon-badge" tabindex="0" role="img" aria-label="Blue Ribbon Winner. 1st place, MV Agricultural Fair."><svg viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 36h6v25l-3-4.2-3 4.2z" fill="#164a86"/><path d="M24 36h6v25l-3-4.2-3 4.2z" fill="#1a5aa0"/><circle cx="24" cy="24" r="17.5" fill="#1f5fa8"/><circle cx="24" cy="24" r="17.5" fill="none" stroke="#15487f" stroke-width="2" stroke-dasharray="2.6 3"/><circle cx="24" cy="24" r="13" fill="#2f76c6"/><circle cx="24" cy="24" r="13" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.9"/><path d="M24 15.2l2.34 4.74 5.23.76-3.78 3.69.89 5.21L24 27.4l-4.68 2.46.89-5.21-3.78-3.69 5.23-.76z" fill="#f4c24b"/></svg><span class="ribbon-badge__tip" role="tooltip"><strong>Blue Ribbon Winner</strong>1st place, MV Agricultural Fair</span></span>
-            <img src="assets/images/products/delicious-apple-cake-800.jpg" srcset="assets/images/products/delicious-apple-cake-400.jpg 400w, assets/images/products/delicious-apple-cake-600.jpg 600w, assets/images/products/delicious-apple-cake-800.jpg 800w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="800" height="600" alt="A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl." loading="lazy" decoding="async">
+            <button type="button" class="product-card__zoom"
+                    data-lightbox-src="assets/images/products/delicious-apple-cake-1067.jpg" data-lightbox-w="1067"
+                    data-lightbox-h="800" data-lightbox-alt="A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl."
+                    data-lightbox-caption="Delicious Apple Cake"
+                    aria-label="View a larger photo of Delicious Apple Cake">
+              <img src="assets/images/products/delicious-apple-cake-1067.jpg" srcset="assets/images/products/delicious-apple-cake-400.jpg 400w, assets/images/products/delicious-apple-cake-600.jpg 600w, assets/images/products/delicious-apple-cake-800.jpg 800w, assets/images/products/delicious-apple-cake-1067.jpg 1067w" sizes="(min-width: 860px) 30vw, (min-width: 560px) 45vw, 92vw" width="1067" height="800" alt="A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl." loading="lazy" decoding="async">
+              <span class="product-card__zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+            </button>
           </div>
           <div class="product-card__body">
             <h3 class="product-card__name">Delicious Apple Cake</h3>
@@ -373,6 +415,14 @@
         </div>
       </div>
     </footer>
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__scrim" data-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+      <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+      <img class="lightbox__img" src="" alt="" loading="eager">
+      <p class="lightbox__caption"></p>
+    </div>
+  </div>
   <script src="assets/menu.js" defer></script>
 </body>
 </html>
