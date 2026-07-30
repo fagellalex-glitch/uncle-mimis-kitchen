@@ -22,6 +22,19 @@ go‑live — the site is built to make them pass.
 > genuinely fixed along the way, not as claims about the current
 > implementation, which no longer has an off‑canvas panel at all.
 >
+> **Update — the owner then asked for the header/nav bar itself to be
+> removed on mobile**, not just the hamburger (the always‑visible link row
+> from the previous fix was still technically "a nav bar"). `.site-header`
+> is now `display: none` below 860px and `display: block` at 860px and up —
+> on mobile the page opens directly into the hero, which already carries
+> the logo and both CTAs, so branding isn't lost. `--header-h` is `0px` on
+> mobile accordingly (no sticky header left to clear), reinstated to `76px`
+> only at the desktop breakpoint. Verified: `getComputedStyle(...).display`
+> is `"none"` at 390px and `"block"` at 1440px; a footer nav link jump to
+> `#products` on mobile lands with exactly `24px` clearance (`1.5rem`,
+> matching `scroll-margin-top` — no header to account for anymore); zero
+> horizontal overflow at either width; lightbox interaction set re-verified
+> unaffected.
 > **Bug found and fixed during the browser pass:** at ≤375px the off‑canvas
 > mobile‑nav panel (`transform: translateX(100%)`) created horizontal overflow
 > (`scrollWidth` 680 vs viewport 320) that `body { overflow-x: hidden }` could not
