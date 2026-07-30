@@ -3,6 +3,35 @@
 (function () {
   "use strict";
 
+  // Shared scroll lock: freezes the page at its current position while an
+  // overlay (mobile menu or lightbox) is open. Plain `overflow: hidden` on
+  // body doesn't reliably stop iOS Safari's momentum scroll from continuing
+  // to move the page behind a fixed overlay once you're not at the very
+  // top — that residual motion fighting the overlay's own entrance
+  // animation is what reads as a "glitch". Pinning body at its exact
+  // scroll offset via position: fixed removes the scrollable surface
+  // entirely, so there's nothing left for momentum to act on.
+  var scrollLockY = 0;
+  var scrollLockCount = 0;
+
+  function lockScroll() {
+    if (scrollLockCount === 0) {
+      scrollLockY = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = (-scrollLockY) + "px";
+      document.body.classList.add("no-scroll");
+    }
+    scrollLockCount++;
+  }
+
+  function unlockScroll() {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) {
+      document.body.classList.remove("no-scroll");
+      document.body.style.top = "";
+      window.scrollTo(0, scrollLockY);
+    }
+  }
+
   var header = document.querySelector(".site-header");
   var toggle = document.querySelector(".nav-toggle");
   var drawer = document.querySelector(".mobile-nav");
@@ -24,7 +53,7 @@
     drawer.removeAttribute("inert");
     drawer.setAttribute("data-open", "true");
     toggle.setAttribute("aria-expanded", "true");
-    document.body.classList.add("no-scroll");
+    lockScroll();
     var f = focusable();
     if (f.length) f[0].focus();
     document.addEventListener("keydown", onKeydown);
@@ -34,7 +63,7 @@
     drawer.removeAttribute("data-open");
     drawer.setAttribute("inert", "");
     toggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("no-scroll");
+    unlockScroll();
     document.removeEventListener("keydown", onKeydown);
     if (restoreFocus !== false && lastFocused) lastFocused.focus();
   }
@@ -127,14 +156,14 @@
       lbImg.height = trigger.getAttribute("data-lightbox-h") || "";
       lbCaption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
       lightbox.setAttribute("data-open", "true");
-      document.body.classList.add("no-scroll");
+      lockScroll();
       lbClose.focus();
       document.addEventListener("keydown", onLbKeydown);
     }
 
     function closeLightbox() {
       lightbox.removeAttribute("data-open");
-      document.body.classList.remove("no-scroll");
+      unlockScroll();
       document.removeEventListener("keydown", onLbKeydown);
       if (lbLastFocused) lbLastFocused.focus();
     }
