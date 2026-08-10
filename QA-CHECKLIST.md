@@ -60,6 +60,21 @@ go‑live — the site is built to make them pass.
 > render correctly at both widths, footer nav includes the new links, and an
 > asset-reference sweep of the built `index.html` confirms all 76 referenced
 > image paths resolve on disk. No console errors observed.
+>
+> **2026-08-10 (later same day) — Classes card given a photo + both extras
+> cards given an email CTA, per owner follow-up.** The Classes card now
+> leads with the existing Blue Ribbon Challah product photo (reused via
+> `imgs["products"]["blue-ribbon-challah"]`, no new image processing needed)
+> using a new `.contact__card--media` variant (full-bleed image top, padded
+> content below). Both the Classes and Catering cards gained an "Email to
+> inquire" CTA pointing at the same address already used in Contact.
+> **Bug found and fixed:** the email CTA's `.contact-method__value` has
+> `word-break: break-word`, which in the narrower (0.9fr) column broke
+> "gmail.com" mid-word ("gmail.c" / "om"). Fixed by inserting a `<wbr>` after
+> the `@` (new `email_markup()` helper, used everywhere the email is
+> displayed as a value) so it wraps at a sensible point instead. Verified via
+> CDP: `scrollWidth == innerWidth` at 320/375/390/430px, and the visual wrap
+> now breaks cleanly after `@` at the narrow width.
 > **Bug found and fixed during the browser pass:** at ≤375px the off‑canvas
 > mobile‑nav panel (`transform: translateX(100%)`) created horizontal overflow
 > (`scrollWidth` 680 vs viewport 320) that `body { overflow-x: hidden }` could not

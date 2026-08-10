@@ -401,29 +401,52 @@ def render_team(team, imgs):
     </section>'''
 
 
-def render_extras(extras):
+def render_extras(extras, site, classes_img):
     classes = extras["classes"]
     catering = extras["catering"]
     classes_paras = "".join(f'<p>{esc(p)}</p>' for p in classes["paragraphs"])
     catering_paras = "".join(f'<p>{esc(p)}</p>' for p in catering["paragraphs"])
+    email_cta = (
+        f'<div class="contact-methods">'
+        f'<a class="contact-method" href="mailto:{attr(site["email"])}">'
+        f'<span class="contact-method__icon">{ICON["mail"]}</span>'
+        f'<span><span class="contact-method__label">Email to inquire</span>'
+        f'<span class="contact-method__value">{email_markup(site["email"])}</span></span></a>'
+        f'</div>')
     return f'''<section class="section section--tint" id="extras" aria-labelledby="extras-title">
       <div class="wrap">
         <div class="contact__grid">
-          <div class="contact__card" data-reveal>
-            <div class="section__head" style="margin-bottom:var(--space-md)">
-              <p class="eyebrow">{esc(classes["eyebrow"])}</p>
-              <h2 class="section__title" id="extras-title">{esc(classes["heading"])}</h2>
+          <div class="contact__card contact__card--media" data-reveal>
+            <figure class="contact__card-media">
+              {picture_img(classes_img, "Two loaves of glossy, golden braided challah, freshly baked.", "(min-width: 720px) 45vw, 92vw")}
+            </figure>
+            <div class="contact__card-content">
+              <div class="section__head" style="margin-bottom:var(--space-md)">
+                <p class="eyebrow">{esc(classes["eyebrow"])}</p>
+                <h2 class="section__title" id="extras-title">{esc(classes["heading"])}</h2>
+              </div>
+              {classes_paras}
+              {email_cta}
             </div>
-            {classes_paras}
           </div>
           <div class="contact__card" data-reveal style="transition-delay:120ms">
             <p class="eyebrow">{esc(catering["eyebrow"])}</p>
             <h3>{esc(catering["heading"])}</h3>
             {catering_paras}
+            {email_cta}
           </div>
         </div>
       </div>
     </section>'''
+
+
+def email_markup(email):
+    """Email address with a <wbr> after the @ so tight columns wrap at a
+    sensible point instead of splitting mid-word (e.g. "gmail.c" / "om")."""
+    if "@" in email:
+        local, domain = email.split("@", 1)
+        return f'{esc(local)}@<wbr>{esc(domain)}'
+    return esc(email)
 
 
 def instagram_handle(url):
@@ -456,7 +479,7 @@ def render_contact(site):
               <a class="contact-method" href="mailto:{attr(site["email"])}">
                 <span class="contact-method__icon">{ICON["mail"]}</span>
                 <span><span class="contact-method__label">Email us</span>
-                  <span class="contact-method__value">{esc(site["email"])}</span></span>
+                  <span class="contact-method__value">{email_markup(site["email"])}</span></span>
               </a>
               {instagram_contact(site)}
             </div>
@@ -630,7 +653,7 @@ def render_page(site, story, products, locations, team, extras, imgs, hero_img,
 {render_story(story, sign_img)}
 {render_products(products, imgs["products"])}
 {render_team(team, imgs["team"])}
-{render_extras(extras)}
+{render_extras(extras, site, imgs["products"]["blue-ribbon-challah"])}
 {render_contact(site)}
 {render_locations(locations, imgs["locations"])}
   </main>
