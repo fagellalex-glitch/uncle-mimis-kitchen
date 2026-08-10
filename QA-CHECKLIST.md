@@ -75,6 +75,34 @@ go‑live — the site is built to make them pass.
 > displayed as a value) so it wraps at a sensible point instead. Verified via
 > CDP: `scrollWidth == innerWidth` at 320/375/390/430px, and the visual wrap
 > now breaks cleanly after `@` at the narrow width.
+>
+> **2026-08-10 (later still) — Catering merged into Contact; header overflow
+> bug found and fixed.** Per owner feedback that "Catering & Special Orders"
+> and "Inquiries & Custom Orders" were redundant (both were "reach out for a
+> custom order," each with its own email CTA), the catering blurb was merged
+> into the Contact section's first paragraph and the separate Catering card
+> removed. `#extras` is now a single centered feature card (`.contact__card
+> --feature`) for Classes only — image left / text right at ≥720px, stacked
+> on mobile — reusing the same challah photo. `extras.json` no longer has a
+> `catering` key.
+> **Real bug found during the width sweep (unrelated to the above, a
+> latent issue from the earlier nav-item additions): at 860–1023px the
+> header nav (6 items) no longer fit in one row and pushed the "Custom
+> Orders" button off-screen** (`scrollWidth` 992 vs `innerWidth` 860 at
+> 860px). Root cause: at the ≥860px breakpoint `.primary-nav` had
+> `overflow-x: visible` and no `min-width: 0`, so as a flex item it refused
+> to shrink below its content's intrinsic width once 6 items stopped
+> fitting. Fixed by giving `.primary-nav` `min-width: 0; flex: 1 1 auto;`
+> and switching back to `overflow-x: auto` (scrolls internally instead of
+> pushing the CTA out) at that breakpoint too. Verified `scrollWidth ==
+> innerWidth` at 320/375/390/430/720/860/900/950/1000/1024/1080/1150/1440px
+> — all clean now.
+>
+> **Also this session: swapped Granola and Jerusalem Bagels' order** (owner
+> request, "group the breads together") — the product grid now reads
+> Challah, Focaccia, Jerusalem Bagels (all three breads, row one), then
+> Scones, Coffee Cake, Apple Cake, the four new cakes/cookies, and Granola
+> last.
 > **Bug found and fixed during the browser pass:** at ≤375px the off‑canvas
 > mobile‑nav panel (`transform: translateX(100%)`) created horizontal overflow
 > (`scrollWidth` 680 vs viewport 320) that `body { overflow-x: hidden }` could not

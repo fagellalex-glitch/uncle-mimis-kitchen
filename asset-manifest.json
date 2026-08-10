@@ -50,16 +50,16 @@
   },
   {
     "section": "products",
-    "source_original": "assets/images/products/artisan-granola.jpg",
-    "original_dimensions": "1067x800",
+    "source_original": "assets/images/products/jerusalem-bagels.jpg",
+    "original_dimensions": "1280x1400",
     "output_widths": [
       400,
       600,
       800,
-      1067
+      1100
     ],
     "output_format": "jpeg",
-    "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
+    "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
   },
   {
     "section": "products",
@@ -167,16 +167,16 @@
   },
   {
     "section": "products",
-    "source_original": "assets/images/products/jerusalem-bagels.jpg",
-    "original_dimensions": "1280x1400",
+    "source_original": "assets/images/products/artisan-granola.jpg",
+    "original_dimensions": "1067x800",
     "output_widths": [
       400,
       600,
       800,
-      1100
+      1067
     ],
     "output_format": "jpeg",
-    "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
+    "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
   },
   {
     "section": "locations",

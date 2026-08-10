@@ -26,13 +26,12 @@
     }
   },
   {
-    "id": "granola",
-    "name": "Granola",
-    "description": "Naturally vegan-friendly, gluten-free, slightly sweet, and absolutely addictive.",
-    "tag": "Vegan",
+    "id": "jerusalem-bagels",
+    "name": "Jerusalem Bagels",
+    "description": "Light and airy, these elongated, oval street-style bagels feature a soft, bread-like crumb and a delicate crust. Perfect for tearing apart and pairing with your favorite savory dips.",
     "image": {
-      "src": "assets/images/products/artisan-granola.jpg",
-      "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
+      "src": "assets/images/products/jerusalem-bagels.jpg",
+      "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
     }
   },
   {
@@ -121,12 +120,13 @@
     }
   },
   {
-    "id": "jerusalem-bagels",
-    "name": "Jerusalem Bagels",
-    "description": "Light and airy, these elongated, oval street-style bagels feature a soft, bread-like crumb and a delicate crust. Perfect for tearing apart and pairing with your favorite savory dips.",
+    "id": "granola",
+    "name": "Granola",
+    "description": "Naturally vegan-friendly, gluten-free, slightly sweet, and absolutely addictive.",
+    "tag": "Vegan",
     "image": {
-      "src": "assets/images/products/jerusalem-bagels.jpg",
-      "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
+      "src": "assets/images/products/artisan-granola.jpg",
+      "alt": "A close-up of golden, clustered granola studded with pumpkin seeds and dried cranberries."
     }
   }
 ]

@@ -403,9 +403,7 @@ def render_team(team, imgs):
 
 def render_extras(extras, site, classes_img):
     classes = extras["classes"]
-    catering = extras["catering"]
     classes_paras = "".join(f'<p>{esc(p)}</p>' for p in classes["paragraphs"])
-    catering_paras = "".join(f'<p>{esc(p)}</p>' for p in catering["paragraphs"])
     email_cta = (
         f'<div class="contact-methods">'
         f'<a class="contact-method" href="mailto:{attr(site["email"])}">'
@@ -415,24 +413,16 @@ def render_extras(extras, site, classes_img):
         f'</div>')
     return f'''<section class="section section--tint" id="extras" aria-labelledby="extras-title">
       <div class="wrap">
-        <div class="contact__grid">
-          <div class="contact__card contact__card--media" data-reveal>
-            <figure class="contact__card-media">
-              {picture_img(classes_img, "Two loaves of glossy, golden braided challah, freshly baked.", "(min-width: 720px) 45vw, 92vw")}
-            </figure>
-            <div class="contact__card-content">
-              <div class="section__head" style="margin-bottom:var(--space-md)">
-                <p class="eyebrow">{esc(classes["eyebrow"])}</p>
-                <h2 class="section__title" id="extras-title">{esc(classes["heading"])}</h2>
-              </div>
-              {classes_paras}
-              {email_cta}
+        <div class="contact__card contact__card--media contact__card--feature" data-reveal>
+          <figure class="contact__card-media">
+            {picture_img(classes_img, "Two loaves of glossy, golden braided challah, freshly baked.", "(min-width: 720px) 45vw, 92vw")}
+          </figure>
+          <div class="contact__card-content">
+            <div class="section__head" style="margin-bottom:var(--space-md)">
+              <p class="eyebrow">{esc(classes["eyebrow"])}</p>
+              <h2 class="section__title" id="extras-title">{esc(classes["heading"])}</h2>
             </div>
-          </div>
-          <div class="contact__card" data-reveal style="transition-delay:120ms">
-            <p class="eyebrow">{esc(catering["eyebrow"])}</p>
-            <h3>{esc(catering["heading"])}</h3>
-            {catering_paras}
+            {classes_paras}
             {email_cta}
           </div>
         </div>
@@ -473,7 +463,8 @@ def render_contact(site):
               <p class="eyebrow">Inquiries &amp; Custom Orders</p>
               <h2 class="section__title" id="contact-title">Let's bake something special</h2>
             </div>
-            <p>Planning a Shabbat dinner, a celebration, or a standing order for your café?
+            <p>Planning a Shabbat dinner, a celebration, a catering order — custom cheeseboards,
+               grazing tables, catered dinners, and more — or a standing order for your café?
                Reach out and Tammy will help put together exactly what you need.</p>
             <div class="contact-methods">
               <a class="contact-method" href="mailto:{attr(site["email"])}">
