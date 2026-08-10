@@ -13,6 +13,8 @@
   "nav": [
     { "label": "Our Story", "href": "#story" },
     { "label": "Products", "href": "#products" },
+    { "label": "Meet the Bakers", "href": "#team" },
+    { "label": "Classes & Catering", "href": "#extras" },
     { "label": "Where to Find Us", "href": "#locations" },
     { "label": "Contact", "href": "#contact" }
   ],

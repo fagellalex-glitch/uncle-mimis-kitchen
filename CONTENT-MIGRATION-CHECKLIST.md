@@ -67,3 +67,35 @@ granola line) · business hours · shipping/delivery options · online ordering 
 testimonials/ratings · a bakery street address. (Awards beyond the original
 focaccia claim were later added at the owner's explicit direction — see row
 above — not invented by the builder.)
+
+## 2026-08-10 — Content update from owner-supplied spreadsheet
+
+The owner sent a Google Sheet (copy edits + embedded photos, not present on
+the original Weebly site or invented by the builder — all text below is
+verbatim or near-verbatim from the sheet). Photos were extracted from the
+sheet's `.xlsx` export; each was matched to its product/person by its drawing
+anchor's row position relative to nearby text labels, then confirmed visually.
+
+- **Description edits**: Blue Ribbon Challah, Focaccia, and Granola
+  descriptions updated to the owner's new wording (Focaccia and Granola each
+  had one obvious typo silently corrected: "an deeply" → "a deeply",
+  "freee" → "free").
+- **Photo swap**: Cranberry Orange Scones photo replaced with the owner's
+  updated shot ("new format" per the sheet).
+- **Photo edit**: Cinnamon Brown Sugar Coffee Cake photo saturation boosted
+  per the owner's request ("needs to be enhanced / more saturated").
+- **Contact copy**: the ordering note in Contact now mentions delivery
+  alongside pickup.
+- **6 new products added**, each with the owner's description and photo:
+  Chocolate "Wave" Cake, Olive Oil Cake, Vegan-Friendly "Wacky" Chocolate
+  Cake (tagged Vegan), Mini Molten Chocolate Cakes, "Shiny Bottom" Brown
+  Butter Oatmeal Cookies, Jerusalem Bagels. None of these carry an award
+  badge — the owner's sheet didn't claim one for them.
+- **New "Meet the Bakers" section** (`#team`): bios for Tammy, Nina, and
+  Natalie, each paired with a childhood/family photo and caption, all as
+  supplied verbatim in the sheet.
+- **New "Classes & Catering" section** (`#extras`): the "Learn to Bake
+  Challah!" class description and the catering/special-orders blurb, both
+  verbatim from the sheet.
+- **Nav updated** from 4 to 6 items (added "Meet the Bakers" and "Classes &
+  Catering").

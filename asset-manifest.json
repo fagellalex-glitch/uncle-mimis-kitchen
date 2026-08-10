@@ -64,12 +64,12 @@
   {
     "section": "products",
     "source_original": "assets/images/products/cranberry-orange-scones.png",
-    "original_dimensions": "1074x800",
+    "original_dimensions": "2048x1415",
     "output_widths": [
       400,
       600,
       800,
-      1074
+      1100
     ],
     "output_format": "jpeg",
     "alt": "A rattan basket of golden, cranberry-studded scones."
@@ -99,6 +99,84 @@
     ],
     "output_format": "jpeg",
     "alt": "A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/chocolate-wave-cake.png",
+    "original_dimensions": "964x766",
+    "output_widths": [
+      400,
+      600,
+      800,
+      964
+    ],
+    "output_format": "jpeg",
+    "alt": "A dark chocolate bundt-shaped cake dusted with powdered sugar, sliced into wave-like scalloped pieces on a plate."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/olive-oil-cake.png",
+    "original_dimensions": "960x708",
+    "output_widths": [
+      400,
+      600,
+      800,
+      960
+    ],
+    "output_format": "jpeg",
+    "alt": "A round golden olive oil cake dusted with a powdered-sugar pinwheel pattern, on a black plate with a lace doily."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/vegan-wacky-chocolate-cake.jpg",
+    "original_dimensions": "1440x1440",
+    "output_widths": [
+      400,
+      600,
+      800,
+      1100
+    ],
+    "output_format": "jpeg",
+    "alt": "A round chocolate cake with a glossy chocolate drizzle in a crosshatch pattern, in a white bakery box."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/mini-molten-chocolate-cakes.png",
+    "original_dimensions": "2048x1536",
+    "output_widths": [
+      400,
+      600,
+      800,
+      1100
+    ],
+    "output_format": "jpeg",
+    "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/shiny-bottom-oatmeal-cookies.png",
+    "original_dimensions": "2048x1536",
+    "output_widths": [
+      400,
+      600,
+      800,
+      1100
+    ],
+    "output_format": "jpeg",
+    "alt": "A pile of thin, golden-brown oatmeal lace cookies with a glossy caramelized bottom, cooling on a wire rack."
+  },
+  {
+    "section": "products",
+    "source_original": "assets/images/products/jerusalem-bagels.jpg",
+    "original_dimensions": "1280x1400",
+    "output_widths": [
+      400,
+      600,
+      800,
+      1100
+    ],
+    "output_format": "jpeg",
+    "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
   },
   {
     "section": "locations",
@@ -134,5 +212,41 @@
     ],
     "output_format": "jpeg",
     "alt": "The hanging “North Tisbury Farm & Market” sign with a rooster weathervane motif, above a bed of summer wildflowers under a blue sky."
+  },
+  {
+    "section": "team",
+    "source_original": "assets/images/team/tammy-childhood.jpg",
+    "original_dimensions": "1288x972",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A toddler in an apron smiling in a kitchen, mixing bowl in hand."
+  },
+  {
+    "section": "team",
+    "source_original": "assets/images/team/nina-childhood.jpg",
+    "original_dimensions": "2048x1365",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A parent and toddler standing side by side at a kitchen counter, the toddler on a step stool helping cook."
+  },
+  {
+    "section": "team",
+    "source_original": "assets/images/team/natalie-childhood.jpg",
+    "original_dimensions": "2048x1536",
+    "output_widths": [
+      400,
+      600,
+      800
+    ],
+    "output_format": "jpeg",
+    "alt": "A baby in a sun hat sitting in a small inflatable pool on the beach, eating a snack."
   }
 ]

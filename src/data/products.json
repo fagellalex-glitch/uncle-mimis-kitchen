@@ -2,7 +2,7 @@
   {
     "id": "blue-ribbon-challah",
     "name": "Blue Ribbon Challah",
-    "description": "As sumptuous as it is striking, Uncle Mimi's challah is the perfect addition to your Shabbat table or festive dinner. Just as delicious on its own or as a base for french toast!",
+    "description": "As sumptuous as it is striking, Uncle Mimi's challah is the perfect addition to your Shabbat table or festive dinner. Delicious on its own or as a base for French toast!",
     "award": {
       "label": "Blue Ribbon Winner",
       "detail": "1st place, MV Agricultural Fair"
@@ -15,7 +15,7 @@
   {
     "id": "focaccia",
     "name": "Focaccia",
-    "description": "The reigning blue ribbon winner in the Martha's Vineyard Agricultural Fair's professional yeast bread category.",
+    "description": "If you are looking for a deeply savory, ultra flavorful bread, try this award winning focaccia.",
     "award": {
       "label": "Blue Ribbon Winner",
       "detail": "1st place, MV Agricultural Fair"
@@ -28,7 +28,7 @@
   {
     "id": "granola",
     "name": "Granola",
-    "description": "Naturally vegan, slightly sweet, and absolutely addictive.",
+    "description": "Naturally vegan-friendly, gluten-free, slightly sweet, and absolutely addictive.",
     "tag": "Vegan",
     "image": {
       "src": "assets/images/products/artisan-granola.jpg",
@@ -72,6 +72,61 @@
     "image": {
       "src": "assets/images/products/delicious-apple-cake.png",
       "alt": "A whole round apple cake topped with cinnamon sugar and chopped walnuts, served in a blue-and-white striped bowl."
+    }
+  },
+  {
+    "id": "chocolate-wave-cake",
+    "name": "Chocolate \"Wave\" Cake",
+    "description": "A light and airy chocolate cake with a perfectly balanced sweetness — simple, delicate, and sure to satisfy every craving.",
+    "image": {
+      "src": "assets/images/products/chocolate-wave-cake.png",
+      "alt": "A dark chocolate bundt-shaped cake dusted with powdered sugar, sliced into wave-like scalloped pieces on a plate."
+    }
+  },
+  {
+    "id": "olive-oil-cake",
+    "name": "Olive Oil Cake",
+    "description": "Rich and tender, our Olive Oil Cake offers a soft, golden crumb with a subtle fruity depth and bright notes of fresh citrus. This is an elegant classic that pairs beautifully with fresh berries, a dollop of whipped cream, or a warm cup of coffee.",
+    "image": {
+      "src": "assets/images/products/olive-oil-cake.png",
+      "alt": "A round golden olive oil cake dusted with a powdered-sugar pinwheel pattern, on a black plate with a lace doily."
+    }
+  },
+  {
+    "id": "vegan-wacky-chocolate-cake",
+    "name": "Vegan-Friendly \"Wacky\" Chocolate Cake",
+    "description": "An iconic 1930s classic! Our 'Wacky' Chocolate Cake uses traditional pantry ingredients to create an impossibly soft, rich chocolate sponge without any dairy or eggs.",
+    "tag": "Vegan",
+    "image": {
+      "src": "assets/images/products/vegan-wacky-chocolate-cake.jpg",
+      "alt": "A round chocolate cake with a glossy chocolate drizzle in a crosshatch pattern, in a white bakery box."
+    }
+  },
+  {
+    "id": "mini-molten-chocolate-cakes",
+    "name": "Mini Molten Chocolate Cakes",
+    "description": "Crafted with high-quality dark chocolate and pure butter, these warm mini lava cakes deliver a soft baked exterior with a luscious chocolate center in every bite.",
+    "image": {
+      "src": "assets/images/products/mini-molten-chocolate-cakes.png",
+      "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
+    }
+  },
+  {
+    "id": "shiny-bottom-oatmeal-cookies",
+    "name": "\"Shiny Bottom\" Brown Butter Oatmeal Cookies",
+    "description": "Ultra-thin oatmeal lace crisps with a glassy, caramelized toffee bottom. Golden, crunchy, and packed with flavor.",
+    "image": {
+      "src": "assets/images/products/shiny-bottom-oatmeal-cookies.png",
+      "alt": "A pile of thin, golden-brown oatmeal lace cookies with a glossy caramelized bottom, cooling on a wire rack."
+    }
+  },
+  {
+    "id": "jerusalem-bagels",
+    "name": "Jerusalem Bagels",
+    "description": "Light and airy, these elongated, oval street-style bagels feature a soft, bread-like crumb and a delicate crust. Perfect for tearing apart and pairing with your favorite savory dips.",
+    "image": {
+      "src": "assets/images/products/jerusalem-bagels.jpg",
+      "alt": "Several oval Jerusalem-style bagels topped with sesame and za'atar seed blends, fresh from the oven on parchment paper."
     }
   }
 ]

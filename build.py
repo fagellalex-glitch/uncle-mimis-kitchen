@@ -374,6 +374,58 @@ def render_products(products, imgs):
     </section>'''
 
 
+def render_team(team, imgs):
+    cards = []
+    for i, m in enumerate(team["members"]):
+        img = imgs[m["id"]]
+        bio = "".join(f'<p>{esc(p)}</p>' for p in m["bio"])
+        delay = i * 90
+        cards.append(f'''<article class="team-card" data-reveal style="transition-delay:{delay}ms">
+          <figure class="team-card__media">
+            {picture_img(img, m["image"]["alt"], "(min-width: 1080px) 30vw, (min-width: 720px) 45vw, 92vw")}
+            <figcaption>{esc(m["caption"])}</figcaption>
+          </figure>
+          <div class="team-card__body">
+            <h3 class="team-card__name">{esc(m["name"])}</h3>
+            {bio}
+          </div>
+        </article>''')
+    return f'''<section class="section" id="team" aria-labelledby="team-title">
+      <div class="wrap wrap--wide">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">{esc(team["eyebrow"])}</p>
+          <h2 class="section__title" id="team-title">{esc(team["heading"])}</h2>
+        </div>
+        <div class="team-grid">{"".join(cards)}</div>
+      </div>
+    </section>'''
+
+
+def render_extras(extras):
+    classes = extras["classes"]
+    catering = extras["catering"]
+    classes_paras = "".join(f'<p>{esc(p)}</p>' for p in classes["paragraphs"])
+    catering_paras = "".join(f'<p>{esc(p)}</p>' for p in catering["paragraphs"])
+    return f'''<section class="section section--tint" id="extras" aria-labelledby="extras-title">
+      <div class="wrap">
+        <div class="contact__grid">
+          <div class="contact__card" data-reveal>
+            <div class="section__head" style="margin-bottom:var(--space-md)">
+              <p class="eyebrow">{esc(classes["eyebrow"])}</p>
+              <h2 class="section__title" id="extras-title">{esc(classes["heading"])}</h2>
+            </div>
+            {classes_paras}
+          </div>
+          <div class="contact__card" data-reveal style="transition-delay:120ms">
+            <p class="eyebrow">{esc(catering["eyebrow"])}</p>
+            <h3>{esc(catering["heading"])}</h3>
+            {catering_paras}
+          </div>
+        </div>
+      </div>
+    </section>'''
+
+
 def instagram_handle(url):
     return "@" + url.rstrip("/").rsplit("/", 1)[-1]
 
@@ -413,7 +465,7 @@ def render_contact(site):
             <h3>A note on ordering</h3>
             <p>Uncle Mimi's is a small-batch kitchen on Martha's Vineyard. Custom orders are
                arranged directly by email — there's no online checkout, so you'll always
-               talk to a real person about quantities, timing, and pickup.</p>
+               talk to a real person about quantities, timing, and pickup or delivery.</p>
             <p>You can also find our baked goods on shelves at three island stores — see
                <a href="#locations">Where to Find Us</a>.</p>
           </div>
@@ -530,8 +582,8 @@ def json_ld(site, products):
 # --------------------------------------------------------------------------
 # page assembly
 # --------------------------------------------------------------------------
-def render_page(site, story, products, locations, imgs, hero_img, sign_img,
-                logo_img, hero_logo_img, year):
+def render_page(site, story, products, locations, team, extras, imgs, hero_img,
+                sign_img, logo_img, hero_logo_img, year):
     head = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -577,6 +629,8 @@ def render_page(site, story, products, locations, imgs, hero_img, sign_img,
 {render_hero(site, hero_img, hero_logo_img)}
 {render_story(story, sign_img)}
 {render_products(products, imgs["products"])}
+{render_team(team, imgs["team"])}
+{render_extras(extras)}
 {render_contact(site)}
 {render_locations(locations, imgs["locations"])}
   </main>
@@ -808,6 +862,8 @@ def main():
     story = load("story.json")
     products = load("products.json")
     locations = load("locations.json")
+    team = load("team.json")
+    extras = load("extras.json")
 
     if os.path.isdir(DIST):
         shutil.rmtree(DIST)
@@ -828,7 +884,12 @@ def main():
                             s["image"]["alt"])
         for s in locations["stores"]
     }
-    imgs = {"products": product_imgs, "locations": location_imgs}
+    team_imgs = {
+        m["id"]: make_image(m["image"]["src"], [400, 600, 800], "team",
+                            m["image"]["alt"])
+        for m in team["members"]
+    }
+    imgs = {"products": product_imgs, "locations": location_imgs, "team": team_imgs}
 
     logo_img = make_logo(site)
     hero_logo_img = make_hero_logo(site)
@@ -842,8 +903,8 @@ def main():
 
     year = date.today().year
     print("• rendering index.html …")
-    page = render_page(site, story, products, locations, imgs, hero_img,
-                       sign_img, logo_img, hero_logo_img, year)
+    page = render_page(site, story, products, locations, team, extras, imgs,
+                       hero_img, sign_img, logo_img, hero_logo_img, year)
     with open(os.path.join(DIST, "index.html"), "w", encoding="utf-8") as f:
         f.write(page)
 

@@ -1,0 +1,17 @@
+{
+  "classes": {
+    "eyebrow": "Classes",
+    "heading": "Learn to Bake Challah!",
+    "paragraphs": [
+      "Join us for a fun and informative Challah Baking Class on the Vineyard. Learn the fundamentals of dough preparation, master beautiful braiding techniques, and take home the skills (and recipes) to bake fresh, bakery-quality challah whenever you crave it.",
+      "Private individual and small group classes available in Chilmark and island-wide."
+    ]
+  },
+  "catering": {
+    "eyebrow": "Catering & Special Orders",
+    "heading": "Something extra for your event",
+    "paragraphs": [
+      "Looking for something extra for a private event? We have a wide variety of offerings, including custom cheeseboards, grazing tables, catered dinners, and more. Please reach out for more information."
+    ]
+  }
+}

@@ -35,6 +35,31 @@ go‑live — the site is built to make them pass.
 > matching `scroll-margin-top` — no header to account for anymore); zero
 > horizontal overflow at either width; lightbox interaction set re-verified
 > unaffected.
+>
+> **2026-08-10 — Content update from owner-supplied spreadsheet.** The owner
+> sent a Google Sheet with copy edits and embedded photos. Extracted 10 photos
+> from the sheet's `.xlsx` export (drawing anchors mapped to nearby row labels
+> to identify each one) and applied: 3 product description edits (challah,
+> focaccia, granola — the latter two also had minor typos silently corrected,
+> "an deeply" → "a deeply" and "freee" → "free"); replaced the Cranberry Orange
+> Scones photo with the owner's updated shot; boosted color saturation
+> (factor 1.45, luminance-preserving) on the Cinnamon Brown Sugar Coffee Cake
+> photo per the owner's request; added "and delivery" to the ordering blurb
+> in Contact; added 6 new products (Chocolate "Wave" Cake, Olive Oil Cake,
+> Vegan-Friendly "Wacky" Chocolate Cake, Mini Molten Chocolate Cakes, "Shiny
+> Bottom" Brown Butter Oatmeal Cookies, Jerusalem Bagels) each with its own
+> photo; and added two new sections — **Meet the Bakers** (`#team`, bios +
+> childhood photos of Tammy, Nina, and Natalie) and **Classes & Catering**
+> (`#extras`, the "Learn to Bake Challah!" class blurb and the catering/
+> special-orders blurb, reusing the existing `.contact__grid`/`.contact__card`
+> two-column layout). Nav updated to 6 items (was 4). Verified via headless
+> Chrome at 390px and 1440px (full-page screenshots, sliced and reviewed in
+> strips since a single fixed-height screenshot silently clips content taller
+> than the window — not a real bug, a testing-tool gotcha): all 12 products
+> render with correct photos/descriptions/lightbox wiring, both new sections
+> render correctly at both widths, footer nav includes the new links, and an
+> asset-reference sweep of the built `index.html` confirms all 76 referenced
+> image paths resolve on disk. No console errors observed.
 > **Bug found and fixed during the browser pass:** at ≤375px the off‑canvas
 > mobile‑nav panel (`transform: translateX(100%)`) created horizontal overflow
 > (`scrollWidth` 680 vs viewport 320) that `body { overflow-x: hidden }` could not

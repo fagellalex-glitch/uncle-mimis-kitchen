@@ -1,0 +1,43 @@
+{
+  "eyebrow": "The Family Behind the Ovens",
+  "heading": "Meet the Bakers",
+  "members": [
+    {
+      "id": "tammy",
+      "name": "Tammy",
+      "caption": "Tammy, age 2, already cooking up a storm.",
+      "bio": [
+        "Before launching Uncle Mimi’s Kitchen in Chilmark, Tammy spent over twenty years honing her craft across the food world. Professionally trained in both the culinary arts and bread baking, Tammy has worked extensively across New York City and Martha's Vineyard as a baker, private chef, and hands-on cooking instructor — sharing her passion for exceptional food with everyone from home cooks to private dinner party guests.",
+        "Her skills include writing and recipe testing, real-time culinary coaching, and years of developing recipes rooted in fresh, vibrant, seasonal flavors. Today, Tammy brings her classic training and deep love for artisanal baking straight to Martha's Vineyard, elevating simple, high-quality ingredients into exceptional everyday treats."
+      ],
+      "image": {
+        "src": "assets/images/team/tammy-childhood.jpg",
+        "alt": "A toddler in an apron smiling in a kitchen, mixing bowl in hand."
+      }
+    },
+    {
+      "id": "nina",
+      "name": "Nina",
+      "caption": "Nina, age 2, cooking with Tammy since 2003.",
+      "bio": [
+        "Nina got her start training under her mother, Tammy. She braided her first challah at three years old, and hasn't stopped since. She worked as the head chef and baker at Dartmouth Hillel for four years, cooking dinners and baking bread for 250 people weekly. Since then, she has worked as a private chef, caterer, and baking workshop instructor across the northeast. She is passionate about making great food and sharing it with great people."
+      ],
+      "image": {
+        "src": "assets/images/team/nina-childhood.jpg",
+        "alt": "A parent and toddler standing side by side at a kitchen counter, the toddler on a step stool helping cook."
+      }
+    },
+    {
+      "id": "natalie",
+      "name": "Natalie",
+      "caption": "Natalie, 9 months old, always eating something.",
+      "bio": [
+        "Natalie is the sales and marketing mastermind behind Uncle Mimi's. She is the most enthusiastic champion of our products and was the catalyst for starting the business back in 2024. Recently, she has joined us in the kitchen and has become a master challah braider!"
+      ],
+      "image": {
+        "src": "assets/images/team/natalie-childhood.jpg",
+        "alt": "A baby in a sun hat sitting in a small inflatable pool on the beach, eating a snack."
+      }
+    }
+  ]
+}
