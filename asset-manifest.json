@@ -63,8 +63,8 @@
   },
   {
     "section": "products",
-    "source_original": "assets/images/products/cranberry-orange-scones.png",
-    "original_dimensions": "2048x1415",
+    "source_original": "assets/images/products/mini-molten-chocolate-cakes.png",
+    "original_dimensions": "2048x1536",
     "output_widths": [
       400,
       600,
@@ -72,7 +72,7 @@
       1100
     ],
     "output_format": "jpeg",
-    "alt": "A rattan basket of golden, cranberry-studded scones."
+    "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
   },
   {
     "section": "products",
@@ -141,8 +141,8 @@
   },
   {
     "section": "products",
-    "source_original": "assets/images/products/mini-molten-chocolate-cakes.png",
-    "original_dimensions": "2048x1536",
+    "source_original": "assets/images/products/cranberry-orange-scones.png",
+    "original_dimensions": "2048x1415",
     "output_widths": [
       400,
       600,
@@ -150,7 +150,7 @@
       1100
     ],
     "output_format": "jpeg",
-    "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
+    "alt": "A rattan basket of golden, cranberry-studded scones."
   },
   {
     "section": "products",
@@ -228,14 +228,14 @@
   {
     "section": "team",
     "source_original": "assets/images/team/nina-childhood.jpg",
-    "original_dimensions": "2048x1365",
+    "original_dimensions": "1016x666",
     "output_widths": [
       400,
       600,
       800
     ],
     "output_format": "jpeg",
-    "alt": "A parent and toddler standing side by side at a kitchen counter, the toddler on a step stool helping cook."
+    "alt": "Nina and a young child slicing red onions together at the stove."
   },
   {
     "section": "team",
@@ -248,5 +248,17 @@
     ],
     "output_format": "jpeg",
     "alt": "A baby in a sun hat sitting in a small inflatable pool on the beach, eating a snack."
+  },
+  {
+    "section": "catering",
+    "source_original": "assets/images/catering/cheese-plate.jpg",
+    "original_dimensions": "1010x712",
+    "output_widths": [
+      500,
+      800,
+      1010
+    ],
+    "output_format": "jpeg",
+    "alt": "A long wooden board loaded with cheeses, cured meats, crackers, nuts, jams, and honey."
   }
 ]

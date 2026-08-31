@@ -35,16 +35,12 @@
     }
   },
   {
-    "id": "cranberry-orange-scones",
-    "name": "Cranberry Orange Scones",
-    "description": "A zesty, hearty, everyday delight!",
-    "award": {
-      "label": "Blue Ribbon Winner",
-      "detail": "1st place, MV Agricultural Fair"
-    },
+    "id": "mini-molten-chocolate-cakes",
+    "name": "Mini Molten Chocolate Cakes",
+    "description": "Crafted with high-quality dark chocolate and pure butter, these warm mini lava cakes deliver a soft baked exterior with a luscious chocolate center in every bite.",
     "image": {
-      "src": "assets/images/products/cranberry-orange-scones.png",
-      "alt": "A rattan basket of golden, cranberry-studded scones."
+      "src": "assets/images/products/mini-molten-chocolate-cakes.png",
+      "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
     }
   },
   {
@@ -102,12 +98,16 @@
     }
   },
   {
-    "id": "mini-molten-chocolate-cakes",
-    "name": "Mini Molten Chocolate Cakes",
-    "description": "Crafted with high-quality dark chocolate and pure butter, these warm mini lava cakes deliver a soft baked exterior with a luscious chocolate center in every bite.",
+    "id": "cranberry-orange-scones",
+    "name": "Cranberry Orange Scones",
+    "description": "A zesty, hearty, everyday delight!",
+    "award": {
+      "label": "Blue Ribbon Winner",
+      "detail": "1st place, MV Agricultural Fair"
+    },
     "image": {
-      "src": "assets/images/products/mini-molten-chocolate-cakes.png",
-      "alt": "A row of twelve mini chocolate lava cakes in brown paper liners, each topped with powdered sugar and a fresh raspberry."
+      "src": "assets/images/products/cranberry-orange-scones.png",
+      "alt": "A rattan basket of golden, cranberry-studded scones."
     }
   },
   {

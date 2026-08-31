@@ -454,25 +454,30 @@ def instagram_contact(site):
         f'<span class="contact-method__value">{esc(instagram_handle(ig))}</span></span></a>')
 
 
-def render_contact(site):
+def render_contact(site, catering_img):
     return f'''<section class="section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div class="contact__grid">
-          <div class="contact__card" data-reveal>
-            <div class="section__head" style="margin-bottom:var(--space-md)">
-              <p class="eyebrow">Inquiries &amp; Custom Orders</p>
-              <h2 class="section__title" id="contact-title">Let's bake something special</h2>
-            </div>
-            <p>Planning a Shabbat dinner, a celebration, a catering order — custom cheeseboards,
-               grazing tables, catered dinners, and more — or a standing order for your café?
-               Reach out and Tammy will help put together exactly what you need.</p>
-            <div class="contact-methods">
-              <a class="contact-method" href="mailto:{attr(site["email"])}">
-                <span class="contact-method__icon">{ICON["mail"]}</span>
-                <span><span class="contact-method__label">Email us</span>
-                  <span class="contact-method__value">{email_markup(site["email"])}</span></span>
-              </a>
-              {instagram_contact(site)}
+          <div class="contact__card contact__card--media" data-reveal>
+            <figure class="contact__card-media">
+              {picture_img(catering_img, "A long wooden board loaded with cheeses, cured meats, crackers, nuts, jams, and honey.", "(min-width: 720px) 45vw, 92vw")}
+            </figure>
+            <div class="contact__card-content">
+              <div class="section__head" style="margin-bottom:var(--space-md)">
+                <p class="eyebrow">Inquiries &amp; Custom Orders</p>
+                <h2 class="section__title" id="contact-title">Let's bake something special</h2>
+              </div>
+              <p>Planning a Shabbat dinner, a celebration, a catering order — custom cheeseboards,
+                 grazing tables, catered dinners, and more — or a standing order for your café?
+                 Reach out and Tammy will help put together exactly what you need.</p>
+              <div class="contact-methods">
+                <a class="contact-method" href="mailto:{attr(site["email"])}">
+                  <span class="contact-method__icon">{ICON["mail"]}</span>
+                  <span><span class="contact-method__label">Email us</span>
+                    <span class="contact-method__value">{email_markup(site["email"])}</span></span>
+                </a>
+                {instagram_contact(site)}
+              </div>
             </div>
           </div>
           <div class="contact__card" data-reveal style="transition-delay:120ms">
@@ -566,6 +571,7 @@ def render_footer(site, logo_img, year):
         <div class="footer__bottom">
           <span>&copy; {year} Uncle Mimi's Kitchen. All rights reserved.</span>
           <span>Martha's Vineyard, MA</span>
+          <span>Certified Food Protection Manager &amp; MA Allergen Awareness Training Compliant</span>
         </div>
       </div>
     </footer>'''
@@ -645,7 +651,7 @@ def render_page(site, story, products, locations, team, extras, imgs, hero_img,
 {render_products(products, imgs["products"])}
 {render_team(team, imgs["team"])}
 {render_extras(extras, site, imgs["products"]["blue-ribbon-challah"])}
-{render_contact(site)}
+{render_contact(site, imgs["catering"])}
 {render_locations(locations, imgs["locations"])}
   </main>
 {render_footer(site, logo_img, year)}
@@ -903,7 +909,11 @@ def main():
                             m["image"]["alt"])
         for m in team["members"]
     }
-    imgs = {"products": product_imgs, "locations": location_imgs, "team": team_imgs}
+    catering_img = make_image("assets/images/catering/cheese-plate.jpg", [500, 800, 1010],
+                              "catering",
+                              "A long wooden board loaded with cheeses, cured meats, crackers, nuts, jams, and honey.")
+    imgs = {"products": product_imgs, "locations": location_imgs, "team": team_imgs,
+            "catering": catering_img}
 
     logo_img = make_logo(site)
     hero_logo_img = make_hero_logo(site)
